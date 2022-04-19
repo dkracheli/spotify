@@ -1,0 +1,127 @@
+header, main, footer, nav, aside, section {
+    display: block;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    padding: 30px;
+    height: 1000px;
+    margin: 0 auto;
+    width: 1395px;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    width: 21%;
+    background-color: #F1F2F7;
+    border-radius: 20px;
+    margin-right: 40px;
+}
+
+header>nav {
+    margin-top: 70px;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 24px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+header>nav li {
+    list-style: none;
+    margin-bottom: 28px;
+}
+
+header>nav a {
+    color: black;
+    padding-left: 10px;
+}
+
+main {
+    width: 75.5%;
+    background-color: #F1F2F7;
+    border-radius: 20px;
+    padding-left: 40px;
+}
+
+#logo {
+    background-image: url(../images/logo.png);
+    background-repeat: no-repeat;
+    height: 68px;
+    width: 265.5px;
+    display: block;
+}
+
+.selected {
+    width: 134px;
+    height: 27px;
+    background: #C2EB2D;
+    border-radius: 5px;
+    padding-left: 2px;
+}
+
+#mySearch {
+    border: none;
+    border-radius: 30PX;
+    height: 24PX;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 48px;
+    text-align: left;
+    padding-inline-start: 10px;
+    width: 74.5%;
+
+}
+
+#SearchWrapper {
+    position: relative;
+    margin-top: 25px;
+    height: 42px;
+}
+
+#SearchWrapper>.fa-search {
+    position: absolute;
+    left: 72%;
+    top: 5px;
+    color: #AAAAAA;
+    font-size: 14px;
+}
+
+#filter {
+    margin-top: 26px;
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 21px;
+    color: #7A7A7A;
+}
+
+.btn {
+    background-color: white;
+    width: 140px;
+    height: 28px;
+    border-radius: 6px;
+    margin-right: 13px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 14px;
+    font-family: 'Poppins', sans-serif;
+    text-align: left;
+}
+ul.dropdown-menu a:hover{
+    background: #C2EB2D;
+}
+.dropdown-toggle::after {
+    vertical-align: 0.255em;
+    border-top: 0.3em solid;
+    border-right: 0.3em solid transparent;
+    border-left: 0.3em solid transparent;
+    position: absolute;
+    top: 12px;
+    right: 5px;
+}
