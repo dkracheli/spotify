@@ -10,15 +10,15 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
     <script src="js/script.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>sportify</title>
 </head>
@@ -45,7 +45,13 @@
         <div id="filter">Filter</div>
         <section>
             <div class="btn-group">
-                <a class="btn">Time Range</a>
+                <a class="btn dropdown-toggle" data-toggle="dropdown">Time Range</a>
+                <ul class="dropdown-menu">
+                    <li>
+                        <p>Value: <span id="timeRangeDays"></span></p><input type="range" name="timeRange" value="22"
+                            class="slider" id="timeRange">
+                    </li>
+                </ul>
             </div>
             <div class="btn-group">
                 <a class="btn dropdown-toggle" data-toggle="dropdown">Categories</a>
@@ -93,7 +99,7 @@
         </section>
         <section>
             <div id="mainBtnContainer">
-                <button class="btn active" onclick="filterSelection('Registration')">Open for Registration
+                <button class="btn" onclick="filterSelection('Registration')">Open for Registration
                     <div id="btnOpenReg">5</div></button>
                 <button class="btn" onclick="filterSelection('progress')">
                     In progress <div id="btnInProgress">4</div>
@@ -103,8 +109,55 @@
                 </button>
             </div>
         </section>
-
+        <!-- <section class="sortByContainer">
+           
+        </section> -->
+        <section class="tournamentsContainer">
+            <button class="tournaments Registration">
+                Winter Tournament
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+            </button>
+            <button class="tournaments Registration">
+                Roni
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+            </button>
+            <button class="tournaments progress">
+                Racheli
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+            </button>
+            <button class="tournaments Registration">
+                Romi
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+            </button>
+            <button class="tournaments Finished">
+                Aviv
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
+                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+            </button>
+        </section>
     </main>
+    <script>
+        filterSelection('all')
+    </script>
 </body>
 
 </html>
