@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/script.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <title>sportify</title>
+</head>
+
+<body class="wrepperNewTour">
+    <header>
+        <a href="index.html" id="logo"></a>
+        <nav>
+            <ul>
+                <li class="selected"><a href="index.html">Tournaments</a></li>
+                <li><a href="#">Referees</a></li>
+                <li><a href="#">categories</a></li>
+                <li><a href="#">Tennis Centers</a></li>
+                <li><a href="#"></a>Statistic</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="SearchWrapper">
+            <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search a tournament, category etc..."
+                title="Type in a category">
+            <i class="fa fa-search"></i>
+        </section>
+        <ul class="breadcrumb">
+            <li><a href="#">Tournaments</a></li>
+            <li>new Tournaments</li>
+        </ul>
+        <div id="mainBtnContainer">
+            <button class="btn">Open for Registration<div>5</div></button>
+            <button class="btn">In progress <div>4</div></button>
+            <button class="btn">Finished <div>10</div></button>
+        </div>
+        </section>
+        <section class="formContainer">
+            <h1>create Tournament</h1>
+            <form class="formGap" action="">
+                <div class="formGroup">
+                    <label for="nameTour">Name of tournament</label>
+                    <input type="text" name="nameTour" id="nameTour">
+                    <div class="formError"></div>
+                </div>
+                <div class="formGroup">
+                    <label for="nameTour">date</label>
+                    <mat-form-field appearance="fill">
+                    <mat-label>Choose a date</mat-label>
+                    <input matInput [matDatepicker]="picker">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                    <div class="formError"></div>
+                </div>
+                <div class="formGroup">
+                    <label>Registration</label>
+                    <input type="text" for="nameOfTour">
+                    <div class="formError"></div>
+                </div>
+                <div class="formGroup">
+                    <label>Reward</label>
+                    <input type="text" for="nameOfTour">
+                    <div class="formError"></div>
+                </div>
+                <div class="formGroup">
+                    <label>Name</label>
+                    <input type="text" for="nameOfTour">
+                    <div class="formError"></div>
+                </div>
+            </form>
+        </section>
+    </main>
+    <script>
+    </script>
+</body>
+
+</html>
