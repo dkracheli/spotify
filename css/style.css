@@ -374,3 +374,123 @@ figure {
     align-items: center;
 }
 
+ul.breadcrumb {
+    margin: 0px;
+    padding: 10px 16px;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 12px;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: ">\00a0";
+}
+
+ul.breadcrumb li a {
+    color: black;
+    text-decoration: none;
+    text-decoration: underline;
+}
+
+ul.breadcrumb li a:hover {
+    color: #C2EB2D;
+    font-weight: 600;
+}
+
+.formContainer {
+    width: 80%;
+    height: 500px;
+    background-color: white;
+    margin-top: 34px 0px 0px 0px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.wrepperNewTour {
+    height: 857px;
+    margin-top: 20px;
+}
+
+.formGap label {
+    display: block;
+    font-size: 18px;
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.formGap > .tab{
+    margin-left: 50px;
+    font-style: normal;
+    display: none;
+    grid-template-columns: 220px 220px;
+    grid-template-rows: 75px 75px;
+}
+
+.formGap input {
+    border-radius: 5px;
+    border: 1px solid;
+    height: 20px;
+    margin-top: 8px;
+    width: 100%;
+    padding: 4px;
+}
+.formGap div{
+    padding:20px;
+}
+
+.nameTour {
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+.progress {
+    height: 66px;
+}
+
+.formBut {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 74px;
+    background-color: #C2EB2D;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+   
+}
+
+#nextBtn {
+    position: absolute;
+    right:15px;
+    top:20px;
+    width: 100px;
+    height: 35px;
+    border: 0;
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 16px;
+}
+#prevBtn{
+    position: absolute;
+    left:15px;
+    top:20px;
+    width: 100px;
+    height: 35px;
+    border: 0;
+    background-color:#C2EB2D;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: 16px;
+}
+.formContainer > h1{
+    margin-left: 15px;
+}
+
+input:read-only{
+    background-color: #C4C499;
+}

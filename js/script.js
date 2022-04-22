@@ -69,3 +69,38 @@ function sortByDate() {
 
 }
 
+let currentTab = 0;
+
+
+function showTab(pageNum) {
+  var x = document.getElementsByClassName("tab");
+  x[pageNum].style.display = "grid";
+  if (pageNum == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (pageNum == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+}
+
+function nextPrev(pageNum) {
+  var x = document.getElementsByClassName("tab");
+  if (pageNum == 1 ||pageNum == -1) {
+    x[currentTab].style.display = "none";
+  }
+  if (currentTab >= x.length) {
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  currentTab = currentTab + pageNum;
+  console.log(pageNum);
+  showTab(currentTab);
+}
+function setRegistration(dateV){
+  let reg = document.getElementById("regTour");
+  reg.value = dateV + 30;
+}
