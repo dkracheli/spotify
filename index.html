@@ -32,7 +32,7 @@
                 <li><a href="#">Referees</a></li>
                 <li><a href="#">categories</a></li>
                 <li><a href="#">Tennis Centers</a></li>
-                <li><a href="#"></a>Statistic</a></li>
+                <li><a href="#">Statistics</a></li>
             </ul>
         </nav>
     </header>
@@ -41,6 +41,17 @@
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search a tournament, category etc..."
                 title="Type in a category">
             <i class="fa fa-search"></i>
+            <section id="profile">
+                <img src="/images/bell.png">
+            <div class="btn-group">
+                <img src="/images/ariela2.jpg">
+                <a class="btn dropdown-toggle sortby" data-toggle="dropdown">ariela</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">profile</a></li>
+                    <li><a href="#">logout</a></li>
+                </ul>
+            </div>
+            </section>
         </section>
         <div id="filter">Filter</div>
         <section>
@@ -109,54 +120,186 @@
                 </button>
             </div>
         </section>
-        <!-- <section class="sortByContainer">
-           
-        </section> -->
+        <div class="btn-toolbar" role="toolbar" id="secMenu" >
+            <div id="sort-by"> <div class="btn-group" role="group">
+                <a class="btn dropdown-toggle sortby" data-toggle="dropdown">sort by</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">date ascending</a></li>
+                    <li><a href="#">date descending</a></li>
+                    <li><a href="#">progress</a></li>
+                </ul>
+            </div>
+            <div class="btn-group" role="group" hidden>
+                <a class="btn dropdown-toggle sortby" data-toggle="dropdown">view by</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">grid</a></li>
+                    <li><a href="#">calander</a></li>
+                    <li><a href="#">list</a></li>
+                </ul>
+            </div>
+            </div>
+            <div>
+                <button id="createTournament" href="#"> + Create Tournament 
+                </button>
+            </div>
+        </div> 
+    
         <section class="tournamentsContainer">
             <button class="tournaments Registration">
                 Winter Tournament
                 <progress value="75" max="100" class="proTournament"></progress>
                 <div class="iconContainer">
-                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>12/01/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
             </button>
             <button class="tournaments Registration">
                 Roni
                 <progress value="75" max="100" class="proTournament"></progress>
                 <div class="iconContainer">
-                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>13/02/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
             </button>
             <button class="tournaments progress">
                 Racheli
                 <progress value="75" max="100" class="proTournament"></progress>
                 <div class="iconContainer">
-                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>14/03/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
             </button>
             <button class="tournaments Registration">
                 Romi
                 <progress value="75" max="100" class="proTournament"></progress>
                 <div class="iconContainer">
-                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>15/05/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
             </button>
             <button class="tournaments Finished">
                 Aviv
                 <progress value="75" max="100" class="proTournament"></progress>
                 <div class="iconContainer">
-                    <p class="iconOpen"><img src="images/People.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Calrndar.png" alt=""></p>
-                    <p class="iconOpen"><img src="images/Category.png" alt=""></p>
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>20/01/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
+            </button>
+            <button class="tournaments Registration">
+                Romi
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>28/06/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
+            </button>
+            <button class="tournaments Registration">
+                Romi
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>06/08/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
+            </button>
+            <button class="tournaments Registration">
+                Romi
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>12/11/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
+            </button>
+            <button class="tournaments Registration">
+                Romi
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>24/07/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
+            </button>
+            <button class="tournaments Registration">
+                Romi
+                <progress value="75" max="100" class="proTournament"></progress>
+                <div class="iconContainer">
+                    <figure class="iconOpen"><img src="images/People.png" alt="">
+                        <figcaption>12</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Calrndar.png" alt="">
+                        <figcaption>08/12/22</figcaption>
+                    </figure>
+                    <figure class="iconOpen"><img src="images/Category.png" alt="">
+                        <figcaption>16-18<br>women</figcaption>
+                    </figure>
+                </div>
             </button>
         </section>
     </main>
     <script>
         filterSelection('all');
+        sortByDate();
     </script>
 </body>
 

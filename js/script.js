@@ -55,15 +55,17 @@ function addactive() {
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("selected");
-      current[0].className = current[0].className.replace("selected", "");
+      if (current.length>1){
+      current[1].className = current[1].className.replace("selected", "");
+      }
       this.className += " selected";
     });
   }
 }
 
+function sortByDate() {
+  let tours = document.getElementsByClassName("tournaments");
+  console.log(tours);
 
-mobiscroll.datepicker('#inline-picker', {
-  controls: ['calendar'],
-  display: 'inline',
-  touchUi: true
-});
+}
+
