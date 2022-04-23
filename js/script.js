@@ -12,7 +12,7 @@ function filterFunction() {
       a[i].style.display = "none";
     }
   }
-  
+
 }
 
 function filterSelection(c) {
@@ -55,8 +55,8 @@ function addactive() {
   for (var i = 0; i < btns.length; i++) {
     btns[i].addEventListener("click", function () {
       var current = document.getElementsByClassName("selected");
-      if (current.length>1){
-      current[1].className = current[1].className.replace("selected", "");
+      if (current.length > 1) {
+        current[1].className = current[1].className.replace("selected", "");
       }
       this.className += " selected";
     });
@@ -71,7 +71,7 @@ function sortByDate() {
 
 let currentTab = 0;
 
-
+//מראה את השדות הרלוונטים בטופס
 function showTab(pageNum) {
   var x = document.getElementsByClassName("tab");
   x[pageNum].style.display = "grid";
@@ -86,10 +86,10 @@ function showTab(pageNum) {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
 }
-
+// ניווט בטופס
 function nextPrev(pageNum) {
   var x = document.getElementsByClassName("tab");
-  if (pageNum == 1 ||pageNum == -1) {
+  if (pageNum == 1 || pageNum == -1) {
     x[currentTab].style.display = "none";
   }
   if (currentTab >= x.length) {
@@ -97,10 +97,41 @@ function nextPrev(pageNum) {
     return false;
   }
   currentTab = currentTab + pageNum;
-  console.log(pageNum);
   showTab(currentTab);
 }
-function setRegistration(dateV){
+// מעתיק את התאריך ומוסיף 30 יום
+function setRegistration(dateV) {
   let reg = document.getElementById("regTour");
-  reg.value = dateV + 30;
+  let d = new Date(dateV);
+  let c = new Date(d.setDate(d.getDate(dateV) + 30));
+  reg.value = c.toLocaleDateString('en-GB');
+  document.getElementById("imgReg").style.display = "block";
+}
+
+function editDateReg() {
+  document.getElementById("regTour").removeAttribute("readonly");
+}
+
+
+//אפשר להכניס "שם יוצר הטופס" רק אותיות
+$(function () {
+  $('#nameOfman').keydown(function (e) {
+    if (e.shiftKey || e.ctrlKey || e.altKey) {
+      e.preventDefault();
+    } else {
+      var key = e.keyCode;
+      if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+        e.preventDefault();
+      }
+    }
+  });
+});
+
+function CustomNotification(choise) {
+  if (choise == "custom") {
+    $(document).ready(function () {
+      $("#Notification").hide();
+      $("#CustomNotif").show();
+    });
+  }
 }

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="css/style.css">
@@ -52,42 +52,92 @@
                         <input type="text" name="nameTour" id="nameTour">
                         <div class="formError"></div>
                     </div>
-                    <div class="dateTour">
+                    <div>
                         <label for="dateTour">date</label>
                         <input type="date" id="dateTour" name="dateTour" onchange="setRegistration(value)">
                         <div class="formError"></div>
                     </div>
                     <div class="regTour">
                         <label for="regTour">Registration</label>
-                        <input type="text" id="regTour" readonly value="">
+                        <input type="txst" id="regTour" readonly>
+                        <img src="images/edit.png" alt="" id="imgReg" onclick="editDateReg()">
                         <div class="formError"></div>
                     </div>
-                    <div class="formGroup">
+                    <div>
                         <label for="rewardTour">Reward</label>
                         <input type="number" id="rewardTour" name="reward">
                         <div class="formError"></div>
                     </div>
-                    <div class="formGroup">
+                    <div>
                         <label for="nameOfman">Name</label>
-                        <input type="nextPrev" for="nameOfman">
+                        <input type="nextPrev" id="nameOfman" >
                         <div class="formError"></div>
                     </div>
                 </div>
                 <div class="tab">
-                    <div class="formGroup">
-                        <label for="rewardTour">Reward</label>
-                        <input type="number" id="rewardTour" name="reward">
+                    <div class="nameTour">
+                        <label for="categoryTour">category</label>
+                        <select name="categoryTour" id="categoryTour">
+                            <option value=""></option>
+                        <option value="CenterR">Center Regions</option>
+                        <option value="Natioal">Natioal</option>
+                        <option value="Southern">Southern Regions</option></select>
                         <div class="formError"></div>
                     </div>
-                    <div class="formGroup">
-                        <label for="nameOfman">Name</label>
-                        <input type="nextPrev" for="nameOfman">
+                    <div>
+                        <label for="gender">Gender</label>
+                        <select name="gender" id="gender">
+                            <option value=""></option>
+                        <option value="women">women</option>
+                        <option value="man">man</option>
+                        <option value="involved">involved</option></select>
                         <div class="formError"></div>
                     </div>
-                </div>
+                    <div>
+                        <label for="gender">Ages</label>
+                        <select name="gender" id="gender">
+                            <option value=""></option>
+                        <option value="women">10-14</option>
+                        <option value="man">14-16</option>
+                        <option value="involved">14-18</option>
+                        <option value="involved">18+</option>
+                    </select>
+                        <div class="formError"></div>
+                    </div>
+                    <div>
+                        <label for="min">Minmum</label>
+                        <input type="number" id="min" name="min">
+                        <div class="formError"></div>
+                    </div>
+                    <div>
+                        <label for="max">Maximum</label>
+                        <input type="number" id="max">
+                        <div class="formError"></div>
+                    </div>
+                </div>      
+                <div class="tab">
+                    <div class="nameTour">
+                        <label for="Notification">Notification</label>
+                        <select onchange="CustomNotification(value)" name="Notification" id="Notification">
+                            <option value="newTournament">A new tournament has been set! for registration</option>
+                            <option value="1"></option>
+                            <option value=""></option>
+                            <option value="custom">Custom message</option>
+                        </select>
+                        <input type="text" id="CustomNotif" name="Notification" placeholder="Write your message ....">
+                        <div class="formError"></div>
+                    </div>
+                 <div class="r"><label>Send:</label>
+                        <input name="send" type="radio" value="now" checked>
+                        <label>now</label><br>
+                        <input name="send" type="radio" value="later" id="later">
+                        <label>later</label>
+                       <input type="date" name="sendDate" id="sendDate" readonly ><input type="time" name="sendTime" id="sendTime" readonly>
+                    </div>
                 </div>
             </form>
             <section class="formBut">
+
                 <button onclick="nextPrev(-1)" id="prevBtn">Back</button>
                 <button onclick="nextPrev(1)" id="nextBtn">Next</button>
             </section>
