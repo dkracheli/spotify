@@ -6,13 +6,13 @@ var tournaments = [
   date: '01/12/2022',
   players: '16-18<br>women'
 },
-{
-  state: 'progress',
-  name: 'Winter Tournament',
-  number:'13',
-  date: '03/12/2022',
-  players: '18+<br>involved'
-},
+// {
+//   state: 'progress',
+//   name: 'Winter Tournament',
+//   number:'13',
+//   date: '03/12/2022',
+//   players: '18+<br>men'
+// },
 {
   state: 'Registration',
   name: 'Winter Tournament',
@@ -114,12 +114,6 @@ function createDate() {
 
 function sortByDateasc () {
 createDate();
-// let reg = document.getElementById("btnOpenReg");
-// if (reg.classList.contains("selected")
-// {
-//   var regTour = tournaments.filter(obj => {
-//     return obj.state=
-//   })
 
   tournaments = tournaments.sort((dateA, dateB) => dateA.date - dateB.date);
   for (let i=0; i<tournaments.length;i++){
