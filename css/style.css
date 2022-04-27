@@ -75,6 +75,7 @@ main {
 
 #mainBtnContainer>.selected {
     background-color: #C2EB2D;
+    padding: 5px;
 }
 
 #mySearch {
@@ -116,7 +117,7 @@ main {
 .btn {
     background-color: white;
     width: 140px;
-    height: 28px;
+    height: 30px;
     border-radius: 6px;
     margin-right: 20px;
     font-style: normal;
@@ -125,6 +126,7 @@ main {
     line-height: 14px;
     text-align: left;
     border: 0;
+    padding-left: 10px;
 }
 
 ul.dropdown-menu a:hover {
@@ -155,6 +157,7 @@ ul.dropdown-menu a:hover {
 #mainBtnContainer {
     margin-top: 30px;
     display: flex;
+    justify-content: space-between;
 }
 
 #mainBtnContainer button {
@@ -949,6 +952,7 @@ li::marker {
     }
 
 
+
     #wrapperObject {
         width: 100%;
         display: flex;
@@ -1008,4 +1012,73 @@ li::marker {
     .formBut {
         width: 100%;
     }
+
+
+    .menu {
+        display: none;
+    }
+
+    header {
+        width: 100%;
+        border-radius: 0;
+        height: 60px;
+        margin: 0;
+    }
+
+    main {
+        width: 100%;
+        padding: 0 20px;
+        height: 650px;
+        margin: 0 auto;
+        border-radius: 0;
+    }
+
+    #logo {
+        margin: 0 auto;
+        margin-top: 17px;
+        height: 50px;
+        width: 200.5px;
+    }
+
+    #mainBtnContainer button {
+        width: 150px;
+        height: 80px;
+        border-radius: 20px;
+        font-size: 12px;
+        line-height: 30px;
+    }
+
+    #mainBtnContainer div {
+        margin-top: 2px;
+        width: 23px;
+        height: 40px;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 54px;
+    }
+
+    #filter {
+        display: none;
+    }
+
+    .tournamentsContainer {
+        width: 100%;
+        justify-content: center;
+    }
+
+    #createTournament {
+        border-radius: 80px;
+        right: 0;
+        border-width: 0;
+        height: 20px;
+        font-size: 10px;
+    }
+
+    footer {
+        background-color: #C2EB2D;
+        width: 100%;
+        border-radius: 0;
+        height: 80px;
+    }
+
 }

@@ -73,7 +73,7 @@ function createTour() {
   for (let i = 0; i < tournaments.length; i++) {
     let tournament = document.createElement("button");
     let figcaption = document.createElement("figcaption");
-
+    
     tournament.classList.add("tournaments");
     tournament.classList.add(tournaments[i].state);
     tournament.innerHTML += `<a>${tournaments[i].name}</a>`;
@@ -117,7 +117,6 @@ function createTour() {
     tournament.appendChild(iconContainer);
     container.appendChild(tournament);
     tournament.setAttribute("onclick", "mainObjectOnclick(this)");
-    // let c = selectStatus();
   }
   filterSelection("all");
 }
@@ -376,25 +375,6 @@ $(function () {
     return new Date().toJSON().split("T")[0];
   });
 });
-
-// function responsiveNav() {
-// const hamburger = document.querySelector(".hamburger");
-// const navMenu = document.querySelector(".nav-menu");
-// const navLink = document.querySelectorAll(".nav-link");
-// hamburger.addEventListener("click", mobileMenu(hamburger,navMenu));
-// navLink.forEach(n => n.addEventListener("click", closeMenu(hamburger,navMenu)));
-// }
-
-// function mobileMenu(hamburger,navMenu) {
-//     hamburger.classList.toggle('active');
-//     navMenu.classList.toggle("active");
-// }
-
-
-// function closeMenu(hamburger,navMenu) {
-//     hamburger.classList.remove("active");
-//     navMenu.classList.remove("active");
-// }
 
 function viewMobile() {
   var x = document.getElementsByClassName("navbar")[0];
