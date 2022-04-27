@@ -1,76 +1,92 @@
 var tournaments = [
-{
-  state: 'Registration',
-  name: 'Winter Tournament',
-  number:'12',
-  date: '01/12/2022',
-  players: '16-18<br>women'
-},
-// {
-//   state: 'progress',
-//   name: 'Winter Tournament',
-//   number:'13',
-//   date: '03/12/2022',
-//   players: '18+<br>men'
-// },
-{
-  state: 'Registration',
-  name: 'Winter Tournament',
-  number:'22',
-  date: '01/14/2022',
-  players: '16<br>women'
-},
-{
-  state: 'Finished',
-  name: 'Winter Tournament',
-  number:'12',
-  date: '08/29/2022',
-  players: '14 men'
-},
-{
-  state: 'Registration',
-  name: 'Winter Tournament',
-  number:'12',
-  date: '04/21/2022',
-  players: '12-14<br>women'
-},
-{
-  state: 'Finished',
-  name: 'Winter Tournament',
-  number:'12',
-  date: '05/29/2022',
-  players: '14<br>men'
-},
-{
-  state: 'Registration',
-  name: 'Winter Tournament',
-  number:'12',
-  date: '06/03/2022',
-  players: '12<br>women'
-},
+  {
+    state: "Registration",
+    name: "National Tournament",
+    number: "12",
+    date: "01/12/2022",
+    players: "16-18<br>women",
+    progrss: "70",
+  },
+  {
+    state: "progress",
+    name: "Masters",
+    number: "13",
+    date: "03/12/2022",
+    players: "18+<br>involved",
+    progrss: "15",
+  },
+  {
+    state: "Registration",
+    name: "South Championship",
+    number: "22",
+    date: "01/14/2022",
+    players: "16<br>women",
+    progrss: "62",
+  },
+  {
+    state: "Progress",
+    name: "Winter Tournament",
+    number: "12",
+    date: "08/29/2022",
+    players: "18<br>men",
+    progrss: "84",
+  },
+  {
+    state: "Registration",
+    name: "ITF3",
+    number: "12",
+    date: "04/21/2022",
+    players: "14<br>women",
+    progrss: "80",
+  },
+  {
+    state: "Finished",
+    name: "Summer Tournament",
+    number: "12",
+    date: "05/29/2022",
+    players: "14<br>men",
+    progrss: "100",
+  },
+  {
+    state: "Registration",
+    name: "Grand Slam",
+    number: "12",
+    date: "06/03/2022",
+    players: "12<br>women",
+    progrss: "40",
+  },
 ];
 
+// function mainBth() {
+//   let x = document.getElementById("mainBtnContainer")
+//   let bth = x.getElementsByClassName("btn")
+//   for (let i = 0; i < bth.length; i++) {
+//     if(bth[i].className == "btn         selected")
+//     console.log(bth[i].className);
+//       return i;
+//   }
+//   return 3;
+// }
 
-function createTour () {
+function createTour() {
   let container = document.getElementsByClassName("tournamentsContainer")[0];
-
-  for (let i=0;i<tournaments.length;i++){
+  for (let i = 0; i < tournaments.length; i++) {
     let tournament = document.createElement("button");
     let figcaption = document.createElement("figcaption");
 
     tournament.classList.add("tournaments");
     tournament.classList.add(tournaments[i].state);
-    tournament.innerHTML+= tournaments[i].name;
+    tournament.innerHTML += `<a>${tournaments[i].name}</a>`;
 
-    tournament.innerHTML+="<progress value=\"75\" max=\"100\" class=\"proTournament\"></progress>";
+    tournament.innerHTML += `<progress value=\"${tournaments[i].progrss}\" max=\"100\" class=\"proTournament\"></progress>`;
     let iconContainer = document.createElement("div");
     let figure = document.createElement("figure");
     figure.classList.add("iconOpen");
     iconContainer.classList.add("iconContainer");
-    
+
     let img = document.createElement("img");
-    img.src="images/People.png";
-    img.alt="";
+    img.src = "images/People.png";
+    img.alt = "";
     figcaption.innerHTML = tournaments[i].number;
     figure.appendChild(img);
     figure.appendChild(figcaption);
@@ -79,8 +95,8 @@ function createTour () {
     figure = document.createElement("figure");
     figure.classList.add("iconOpen");
     img = document.createElement("img");
-    img.src="images/Calrndar.png";
-    img.alt="";
+    img.src = "images/Calrndar.png";
+    img.alt = "";
     figcaption = document.createElement("figcaption");
     figcaption.innerHTML = tournaments[i].date;
     figure.appendChild(img);
@@ -90,8 +106,8 @@ function createTour () {
     figure = document.createElement("figure");
     figure.classList.add("iconOpen");
     img = document.createElement("img");
-    img.src="images/Category.png";
-    img.alt="";
+    img.src = "images/Category.png";
+    img.alt = "";
     figcaption = document.createElement("figcaption");
     figcaption.innerHTML = tournaments[i].players;
     figure.appendChild(img);
@@ -100,39 +116,72 @@ function createTour () {
     iconContainer.appendChild(figure);
     tournament.appendChild(iconContainer);
     container.appendChild(tournament);
-    filterSelection('all');
+    tournament.setAttribute("onclick", "mainObjectOnclick(this)");
+    // let c = selectStatus();
   }
+  filterSelection("all");
 }
 
 function createDate() {
   let container = document.getElementsByClassName("tournamentsContainer")[0];
-  container.innerHTML="";
-  for (let i=0; i<tournaments.length;i++){
+  container.innerHTML = "";
+  for (let i = 0; i < tournaments.length; i++) {
     tournaments[i].date = new Date(tournaments[i].date);
   }
 }
 
-function sortByDateasc () {
-createDate();
-
-  tournaments = tournaments.sort((dateA, dateB) => dateA.date - dateB.date);
-  for (let i=0; i<tournaments.length;i++){
-    tournaments[i].date = tournaments[i].date.toLocaleDateString('en-US');
-  }
-   createTour();
+function mainObjectOnclick(crumb) {
+  document.location.href = "mainObject.html";
+  // function addBread(crumb){
+  //   var firstCrumb= crumb.classList[1];
+  //   var secCrumb=crumb.getElementsByTagName("a")[0].innerHTML;
+  //   let crumbs = document.getElementsByClassName("breadcrumb")[0];
+  //   crumbs.innerHTML+=`<li hidden>${firstCrumb}</li><li hidden>${secCrumb}</li>`;
+  // }
 }
 
-function sortByDatedesc () {
-  createDate();
-    tournaments = tournaments.sort((dateA, dateB) => dateB.date - dateA.date);
-    for (let i=0; i<tournaments.length;i++){
-      tournaments[i].date = tournaments[i].date.toLocaleDateString('en-US');
-    }
-    createTour();
+function fillFields() {}
+
+function editTour() {
+  let wrapper = document.getElementById("readOnlyForm");
+  let fields = wrapper.querySelectorAll(".readonlyBox");
+  for (let i = 0; i < fields.length; i++) {
+    fields[i].removeAttribute("readonly");
+    fields[i].removeAttribute("disabled");
+    fields[i].style.backgroundColor = "white";
   }
+}
+
+function save() {
+  let wrapper = document.getElementById("readOnlyForm");
+  let fields = wrapper.querySelectorAll(".readonlyBox");
+  for (let i = 0; i < fields.length; i++) {
+    fields[i].ariaReadOnly = true;
+    fields[i].ariaDisabled = true;
+    fields[i].style.backgroundColor = "#e5e5ea";
+  }
+}
+
+function sortByDateasc() {
+  createDate();
+  tournaments = tournaments.sort((dateA, dateB) => dateA.date - dateB.date);
+  for (let i = 0; i < tournaments.length; i++) {
+    tournaments[i].date = tournaments[i].date.toLocaleDateString("en-US");
+  }
+  createTour();
+}
+
+function sortByDatedesc() {
+  createDate();
+  tournaments = tournaments.sort((dateA, dateB) => dateB.date - dateA.date);
+  for (let i = 0; i < tournaments.length; i++) {
+    tournaments[i].date = tournaments[i].date.toLocaleDateString("en-US");
+  }
+  createTour();
+}
 
 function filterFunction() {
-  let input, filter, ul, li, a, i;
+  let input, filter, a, i;
   input = document.getElementById("RefereeSearch");
   filter = input.value.toUpperCase();
   div = document.getElementsByClassName("dropdown-menu")[3];
@@ -149,16 +198,17 @@ function filterFunction() {
 
 function filterSelection(c) {
   var x, i;
+  statusT = c;
   x = document.getElementsByClassName("tournaments");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
-    w3RemoveClass(x[i], "show");
-    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+    RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) AddClass(x[i], "show");
   }
   addactive();
 }
 
-function w3AddClass(element, name) {
+function AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -169,7 +219,7 @@ function w3AddClass(element, name) {
   }
 }
 
-function w3RemoveClass(element, name) {
+function RemoveClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");
   arr2 = name.split(" ");
@@ -180,8 +230,6 @@ function w3RemoveClass(element, name) {
   }
   element.className = arr1.join(" ");
 }
-
-
 
 function addactive() {
   var btnContainer = document.getElementById("mainBtnContainer");
@@ -197,8 +245,6 @@ function addactive() {
   }
 }
 
-
-
 let currentTab = 0;
 
 //מראה את השדות הרלוונטים בטופס
@@ -210,31 +256,32 @@ function showTab(pageNum) {
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (pageNum == (x.length - 1)) {
+  if (pageNum == x.length - 1) {
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
+  fixStepIndicator(pageNum);
 }
 // ניווט בטופס
-function nextPrev(pageNum) {
+function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
-  if (pageNum == 1 || pageNum == -1) {
-    x[currentTab].style.display = "none";
-  }
+  if (n == 1 && !validateForm()) return false;
+  x[currentTab].style.display = "none";
+  currentTab = currentTab + n;
   if (currentTab >= x.length) {
-    document.getElementById("regForm").submit();
-    return false;
+    window.location.href = "index.html";
+    // document.getElementById("regForm").submit();
   }
-  currentTab = currentTab + pageNum;
   showTab(currentTab);
 }
+
 // מעתיק את התאריך ומוסיף 30 יום
 function setRegistration(dateV) {
   let reg = document.getElementById("regTour");
   let d = new Date(dateV);
-  let c = new Date(d.setDate(d.getDate(dateV) + 30));
-  reg.value = c.toLocaleDateString('en-GB');
+  let c = new Date(d.setDate(d.getDate(dateV) - 30));
+  reg.value = c.toLocaleDateString("en-GB");
   document.getElementById("imgReg").style.display = "block";
 }
 
@@ -242,15 +289,31 @@ function editDateReg() {
   document.getElementById("regTour").removeAttribute("readonly");
 }
 
+function fixStepIndicator(n) {
+  var i,
+    x = document.getElementsByClassName("stepper-item");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  x[n].className += " active";
+}
 
 //אפשר להכניס "שם יוצר הטופס" רק אותיות
 $(function () {
-  $('#nameOfman').keydown(function (e) {
+  $("#nameOfman").keydown(function (e) {
     if (e.shiftKey || e.ctrlKey || e.altKey) {
       e.preventDefault();
     } else {
       var key = e.keyCode;
-      if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
+      if (
+        !(
+          key == 8 ||
+          key == 32 ||
+          key == 46 ||
+          (key >= 35 && key <= 40) ||
+          (key >= 65 && key <= 90)
+        )
+      ) {
         e.preventDefault();
       }
     }
@@ -263,5 +326,81 @@ function CustomNotification(choise) {
       $("#Notification").hide();
       $("#CustomNotif").show();
     });
+  }
+}
+
+function validateForm() {
+  let Requireds,
+    i,
+    errorMsg,
+    valid = true;
+  tabShow = document.getElementsByClassName("tab")[currentTab];
+  Requireds = tabShow.getElementsByClassName("Required");
+  for (i = 0; i < Requireds.length; i++) {
+    inputReq = Requireds[i].getElementsByTagName("input")[0];
+    errorMsg = Requireds[i].getElementsByTagName("div")[0];
+    if (inputReq.name == "nameTour")
+      if (inputReq.value == "") {
+        inputReq.className += " invalid";
+        errorMsg.style.display = "block";
+        valid = false;
+      } else {
+        inputReq.className -= " invalid";
+        errorMsg.style.display = "none";
+        nameT = inputReq.value;
+      }
+    if (inputReq.name == "dateTour")
+      if (inputReq.value == "") {
+        errorMsg.style.display = "block";
+        inputReq.className += " invalid";
+        valid = false;
+      } else {
+        errorMsg.style.display = "none";
+        inputReq.className -= " invalid";
+      }
+    if (inputReq.name == "reward")
+      if (inputReq.value < 100) {
+        inputReq.className += " invalid";
+        errorMsg.style.display = "block";
+        valid = false;
+      } else {
+        inputReq.className -= " invalid";
+        errorMsg.style.display = "none";
+      }
+  }
+  return valid;
+}
+
+$(function () {
+  $('[type="date"]').prop("min", function () {
+    return new Date().toJSON().split("T")[0];
+  });
+});
+
+// function responsiveNav() {
+// const hamburger = document.querySelector(".hamburger");
+// const navMenu = document.querySelector(".nav-menu");
+// const navLink = document.querySelectorAll(".nav-link");
+// hamburger.addEventListener("click", mobileMenu(hamburger,navMenu));
+// navLink.forEach(n => n.addEventListener("click", closeMenu(hamburger,navMenu)));
+// }
+
+// function mobileMenu(hamburger,navMenu) {
+//     hamburger.classList.toggle('active');
+//     navMenu.classList.toggle("active");
+// }
+
+
+// function closeMenu(hamburger,navMenu) {
+//     hamburger.classList.remove("active");
+//     navMenu.classList.remove("active");
+// }
+
+function viewMobile() {
+  var x = document.getElementsByClassName("navbar")[0];
+  if (x.style.display === "block") {
+    x.style.display = "none";
+  } else {
+    x.style.display = "block";
   }
 }

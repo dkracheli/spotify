@@ -10,6 +10,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        crossorigin="anonymous" />
     <title>sportify</title>
 </head>
 
@@ -20,7 +22,7 @@
             <ul>
                 <li class="selected"><a href="index.html">Tournaments</a></li>
                 <li><a href="#">Referees</a></li>
-                <li><a href="#">categories</a></li>
+                <li><a href="#">Categories</a></li>
                 <li><a href="#">Tennis Centers</a></li>
                 <li><a href="#"></a>Statistic</a></li>
             </ul>
@@ -43,80 +45,92 @@
         </div>
         </section>
         <section class="formContainer">
-            <section class="progress">1-2-3</section>
+            <div class="stepper-wrapper">
+                <div class="stepper-item active">
+                    <div class="step-counter">1</div>
+                </div>
+                <div class="stepper-item">
+                    <div class="step-counter">2</div>
+                </div>
+                <div class="stepper-item">
+                    <div class="step-counter">3</div>
+                </div>
+            </div>
+            <div class="space"></div>
             <h1>create Tournament</h1>
-            <form class="formGap" action="">
+            <form class="formGap" action="index.html">
                 <div class="tab">
-                    <div class="nameTour">
-                        <label for="nameTour">Name of tournament</label>
+                    <section class="nameTour Required">
+                        <label for="nameTour">Name of tournament<span>*</span></label>
                         <input type="text" name="nameTour" id="nameTour">
-                        <div class="formError"></div>
-                    </div>
-                    <div>
-                        <label for="dateTour">date</label>
+                        <i class="fas fa-exclamation-circle failure-icon"></i>
+                        <i class="far fa-check-circle success-icon"></i>
+                        <div class="formError">Please choose a name for the tournament</div>
+                    </section>
+                    <section class="Required">
+                        <label for="dateTour">date<span>*</span></label>
                         <input type="date" id="dateTour" name="dateTour" onchange="setRegistration(value)">
-                        <div class="formError"></div>
-                    </div>
-                    <div class="regTour">
+                        <div class="formError"> select a date fot tournament</div>
+                    </section>
+                    <section class="regTour">
                         <label for="regTour">Registration</label>
                         <input type="txst" id="regTour" readonly>
                         <img src="images/edit.png" alt="" id="imgReg" onclick="editDateReg()">
-                        <div class="formError"></div>
-                    </div>
-                    <div>
-                        <label for="rewardTour">Reward</label>
+                    </section>
+                    <section class="Required">
+                        <label for="rewardTour">Reward<span>*</span></label>
                         <input type="number" id="rewardTour" name="reward">
-                        <div class="formError"></div>
-                    </div>
-                    <div>
+                        <div class="formError">The prize must be higher than 100$</div>
+                    </section>
+                    <section>
                         <label for="nameOfman">Name</label>
-                        <input type="nextPrev" id="nameOfman" >
-                        <div class="formError"></div>
-                    </div>
+                        <input type="nextPrev" id="nameOfman">
+                    </section>
                 </div>
                 <div class="tab">
-                    <div class="nameTour">
-                        <label for="categoryTour">category</label>
-                        <select name="categoryTour" id="categoryTour">
-                            <option value=""></option>
-                        <option value="CenterR">Center Regions</option>
-                        <option value="Natioal">Natioal</option>
-                        <option value="Southern">Southern Regions</option></select>
+                    <section class="nameTour">
+                        <label for="categoryTour">category<span>*</span></label>
+                        <select name="categoryTour Required" id="categoryTour">
+                            <option value="CenterR"></option>
+                            <option value="CenterR">Center Regions</option>
+                            <option value="Natioal">Natioal</option>
+                            <option value="Southern">Southern Regions</option>
+                        </select>
                         <div class="formError"></div>
-                    </div>
-                    <div>
+                    </section>
+                    <section>
                         <label for="gender">Gender</label>
                         <select name="gender" id="gender">
-                            <option value=""></option>
-                        <option value="women">women</option>
-                        <option value="man">man</option>
-                        <option value="involved">involved</option></select>
+                            <option value="involved"></option>
+                            <option value="women">women</option>
+                            <option value="man">man</option>
+                            <option value="involved">involved</option>
+                        </select>
                         <div class="formError"></div>
-                    </div>
-                    <div>
+                    </section>
+                    <section>
                         <label for="gender">Ages</label>
                         <select name="gender" id="gender">
-                            <option value=""></option>
-                        <option value="women">10-14</option>
-                        <option value="man">14-16</option>
-                        <option value="involved">14-18</option>
-                        <option value="involved">18+</option>
-                    </select>
-                        <div class="formError"></div>
-                    </div>
-                    <div>
+                            <option value="all"></option>
+                            <option value="10-14">10-14</option>
+                            <option value="14-16">14-16</option>
+                            <option value="14-18">14-18</option>
+                            <option value="18+">18+</option>
+                        </select>
+                    </section>
+                    <section>
                         <label for="min">Minmum</label>
                         <input type="number" id="min" name="min">
                         <div class="formError"></div>
-                    </div>
-                    <div>
+                    </section>
+                    <section>
                         <label for="max">Maximum</label>
                         <input type="number" id="max">
                         <div class="formError"></div>
-                    </div>
-                </div>      
+                    </section>
+                </div>
                 <div class="tab">
-                    <div class="nameTour">
+                    <section class="nameTour">
                         <label for="Notification">Notification</label>
                         <select onchange="CustomNotification(value)" name="Notification" id="Notification">
                             <option value="newTournament">A new tournament has been set! for registration</option>
@@ -126,14 +140,15 @@
                         </select>
                         <input type="text" id="CustomNotif" name="Notification" placeholder="Write your message ....">
                         <div class="formError"></div>
-                    </div>
-                 <div class="r"><label>Send:</label>
+                    </section>
+                    <section class="sendNotif"><label>Send:</label>
                         <input name="send" type="radio" value="now" checked>
                         <label>now</label><br>
                         <input name="send" type="radio" value="later" id="later">
                         <label>later</label>
-                       <input type="date" name="sendDate" id="sendDate" readonly ><input type="time" name="sendTime" id="sendTime" readonly>
-                    </div>
+                        <input type="date" name="sendDate" id="sendDate" readonly><input type="time" name="sendTime"
+                            id="sendTime" readonly>
+                    </section>
                 </div>
             </form>
             <section class="formBut">

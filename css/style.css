@@ -51,7 +51,9 @@ main {
     width: 75.5%;
     background-color: #F1F2F7;
     border-radius: 20px;
-    padding: 0 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    position: relative;
 }
 
 #logo {
@@ -116,7 +118,7 @@ main {
     width: 140px;
     height: 28px;
     border-radius: 6px;
-    margin-right: 13px;
+    margin-right: 20px;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -129,9 +131,10 @@ ul.dropdown-menu a:hover {
     background: #C2EB2D;
 }
 
-.dropdown-menu{
+.dropdown-menu {
     font-size: 14px;
 }
+
 .dropdown-toggle::after {
     vertical-align: 0.255em;
     border-top: 0.3em solid;
@@ -181,13 +184,15 @@ ul.dropdown-menu a:hover {
     justify-content: space-between;
     overflow-y: auto;
     height: 580px;
+    align-content: flex-start;
+    width: 940px;
 }
 
 .tournamentsContainer::after {
     content: "";
     width: 297px;
     height: 160px;
-  }
+}
 
 .tournaments {
     width: 297px;
@@ -214,8 +219,9 @@ progress {
     height: 17px;
     -webkit-appearance: none;
 }
-.progress{
-margin-bottom: unset;
+
+.progress {
+    margin-bottom: unset;
 }
 
 ::-webkit-progress-bar {
@@ -300,9 +306,10 @@ margin-bottom: unset;
     margin-bottom: 10px;
     margin-left: 16px;
 }
+
 .show {
     display: block;
-  }
+}
 
 .btn-toolbar {
     margin-top: 21px;
@@ -316,12 +323,11 @@ margin-bottom: unset;
     border-width: 0;
     height: 30px;
     font-size: 13px;
-    margin-right: 10px;
 }
 
 .sortby {
     background-color: transparent;
-    width:fit-content;
+    width: fit-content;
 }
 
 #profile {
@@ -329,7 +335,7 @@ margin-bottom: unset;
     display: inline;
 }
 
-#profile > *:hover {
+#profile>*:hover {
     cursor: pointer;
 }
 
@@ -371,6 +377,7 @@ figcaption {
 figure {
     justify-content: center;
 }
+
 .btn-group {
     align-items: center;
 }
@@ -378,6 +385,7 @@ figure {
 ul.breadcrumb {
     margin: 0px;
     padding: 10px 16px;
+    background-color: transparent;
 }
 
 ul.breadcrumb li {
@@ -413,7 +421,7 @@ ul.breadcrumb li a:hover {
 }
 
 .wrepperNewTour {
-    height: 857px;
+    height: 820px;
     margin-top: 20px;
 }
 
@@ -424,7 +432,7 @@ ul.breadcrumb li a:hover {
     font-weight: 500;
 }
 
-.formGap > .tab{
+.formGap>.tab {
     margin-left: 50px;
     font-style: normal;
     display: none;
@@ -440,27 +448,54 @@ ul.breadcrumb li a:hover {
     width: 100%;
     padding: 2px;
     font-size: 16px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
+
+.formGap div i {
+    position: absolute;
+    padding: 10px;
+}
+
+
+div.formError {
+    font-size: 12px;
+    color: red;
+    display: none;
+    padding: 0,0,0,0;
+}
+label > span{
+    color: red;
+}
+
+.success-icon,
+.failure-icon {
+    right: -10px;
+    top: 30px;
+    opacity: 0;
+}
+input.invalid {
+    background-color: #ffdddd;
+  }
+  
+
 select {
     border-radius: 5px;
     border: 1px solid;
-    height:31px;
+    height: 31px;
     margin-top: 6px;
     width: 100%;
     padding: 2px;
     font-size: 16px;
 }
-.formGap div{
-    padding:20px;
+
+.formGap section {
+    padding-left: 20px;
+    position: relative;
 }
 
 .nameTour {
     grid-column-start: 1;
     grid-column-end: 3;
-}
-
-.progress {
-    height: 66px;
 }
 
 .formBut {
@@ -471,13 +506,13 @@ select {
     background-color: #C2EB2D;
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
-   
+    left: 0;
 }
 
 #nextBtn {
     position: absolute;
-    right:15px;
-    top:20px;
+    right: 15px;
+    top: 20px;
     width: 100px;
     height: 35px;
     border: 0;
@@ -487,59 +522,490 @@ select {
     font-weight: 600;
     font-size: 16px;
 }
-#prevBtn{
+
+#prevBtn {
     position: absolute;
-    left:15px;
-    top:20px;
+    left: 15px;
+    top: 20px;
     width: 100px;
     height: 35px;
     border: 0;
-    background-color:#C2EB2D;
+    background-color: #C2EB2D;
     border-radius: 5px;
     font-weight: 400;
     font-size: 16px;
 }
-.formContainer > h1{
+
+.formContainer>h1 {
     margin-left: 15px;
 }
 
-input:read-only{
+input:read-only {
     background-color: #e5e5ea;
 }
-.regTour{
+
+.regTour {
     position: relative;
 }
-.regTour > #imgReg{
+
+.regTour>#imgReg {
     width: 15px;
     height: 15px;
     position: absolute;
-    right: 20px;
-    top: 61px;
+    right: 5px;
+    top: 42px;
     display: none;
 }
-#CustomNotif{
+
+#CustomNotif {
     display: none;
 }
-.r{
+
+.sendNotif {
     grid-column-start: 1;
     grid-column-end: 3;
 }
-.r > label{
-  display: inline;
+
+.sendNotif>label {
+    display: inline;
 }
-.r > input[type="radio"], input[type="radio"]::after {
+
+.sendNotif>input[type="radio"], input[type="radio"]::after {
     width: 20px;
     vertical-align: -7px;
 }
-.r > input[type="date"],input[type="time"]{
-    margin-left:15px;
-    width:113px;
+
+.sendNotif>input[type="date"], input[type="time"] {
+    margin-left: 15px;
+    width: 113px;
 }
-input[type="date"]{
+
+input[type="date"] {
     position: relative;
 }
-#later{
+
+input[type='radio'] {
+    background-color: #C2EB2D;
+}
+
+#later {
     margin-left: 59.2px;
     width: 20px;
 }
 
+.stepper-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.stepper-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+
+    @media (max-width: 768px) {
+        font-size: 12px;
+    }
+}
+
+.stepper-item::before {
+    position: absolute;
+    content: "";
+    border-bottom: 10px solid #ccc;
+    width: 100%;
+    top: 35px;
+    left: -50%;
+    z-index: 2;
+}
+
+.stepper-item::after {
+    position: absolute;
+    content: "";
+    border-bottom: 9px solid #ccc;
+    width: 100%;
+    top: 35px;
+    left: 50%;
+    z-index: 2;
+}
+
+.stepper-item .step-counter {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ccc;
+    margin-bottom: 6px;
+    top: 15px;
+    font-size: 18px;
+}
+
+.stepper-item.active {
+    font-weight: bold;
+}
+
+.stepper-item.completed .step-counter {
+    background-color: #C2EB2D;
+}
+
+.stepper-item.completed::after {
+    position: absolute;
+    content: "";
+    border-bottom: 8px solid #C2EB2D;
+    width: 100%;
+    top: 36px;
+    left: 50%;
+    z-index: 3;
+}
+
+.stepper-item:first-child::before {
+    content: none;
+}
+
+.stepper-item:last-child::after {
+    content: none;
+}
+
+.space {
+    height: 10px;
+}
+
+::-webkit-calendar-picker-indicator::content {
+    color: #C2EB2D;
+}
+
+button {
+    background-color: transparent;
+    border-width: 0;
+}
+
+.tourContainer {
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 70px;
+    position: relative;
+    height: 520px;
+    text-align: center;
+}
+
+#wrapperObject{
+    display: flex;
+    position: relative;
+}
+
+#wrapperITF {
+    display: flex;
+    position: relative;
+    margin-top: 50px;
+}
+
+.iconContainerITF {
+    text-align: left;
+}
+
+.iconContainerITF > div {
+    margin-top: 40px;
+    font-size: larger;
+    font-weight: 500;
+}
+
+#wrapperITF h1,h2 {
+    text-align: center;
+}
+
+.btnITF{
+    background-color: #C2EB2D;
+    border-radius: 5px;
+    padding: 6px;
+}
+
+.iconContainerITF {
+    margin-bottom: 60px;
+    width: 100%;
+}
+
+.tourContainerITF {
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 20px;
+    padding: 70px;
+    position: relative;
+    height: 520px;
+    text-align: center;
+}
+
+.tourContainerITF p {
+    text-align: left;
+    font-size: smaller;
+    margin-top: 30px;
+}
+
+#wrapperITF .tourContainerITF{
+    height: 700px;
+    padding: 50px;
+}
+
+.structure {
+    margin-top: 30px;
+    width: 38%;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    height: 520px;
+    margin-left: 50px;
+    padding: 40px;
+    text-align: center;
+}
+
+.structure button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    margin-top: 80px;
+    width: 60%;
+    height: 10%;
+    font-size: large;
+}
+
+.tourContainer button {
+    background-color: black;
+    color: white;
+    border-radius: 5px;
+    width: 12%;
+    height: 8%;
+    font-size: large;
+    position:absolute;
+    right: 0;
+    top:0;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.structure p {
+    margin-top: 50px;
+    font-size: large;
+}
+
+.tourContainer input,select {
+    height: 35px;
+    display: inline-block;
+    width: 100%;
+    margin-top: 1px;
+    background-color: #e5e5ea;
+}
+
+#readOnlyForm label{
+    margin-top: 24px;
+    margin-bottom: 0;
+}
+
+
+#readOnlyForm {
+    font-size: 1em;
+    columns: 2;
+}
+
+.form-row {
+    padding: 0.5rem;
+}
+
+#wrapperObject label {
+    font-size: medium;
+}
+
+a {
+    color: black;
+}
+
+#delBtn {
+    position: absolute;
+    left: 15px;
+    top: 20px;
+    width: 100px;
+    height: 35px;
+    border-width: 2px;
+    border-color: red;
+    background-color: #C2EB2D;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+#smallMenu {
+    font-size: larger;
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+#smallMenu .selected {
+    width: auto;
+}
+
+#rewardTour {
+    background: url(../images/currency-dollar.svg) no-repeat scroll;
+    background-color: #e5e5ea;
+    background-position: right;
+}
+
+
+#breadMain {
+    padding: unset;
+}
+
+.headlines {
+    margin-top: 30px;
+}
+.headlines h2 {
+    text-align: center;
+    font-size: x-large;
+    margin: 0;
+}
+
+.headlines h1 {
+    font-size: xx-large;
+}
+
+.msgContainer {
+    margin-top: 30px;
+    width: 60%;
+    background-color: white;
+    border-radius: 20px;
+    position: relative;
+    height: 700px;
+    margin-left: 50px;
+    padding: 50px;
+    text-align: right
+}
+
+.itfButtons {
+    display: flex;
+    justify-content: space-around
+}
+
+.msgContainer button {
+    background-color: #C2EB2D;
+    border-radius: 5px;
+    margin: 0 0 30px 0;
+    width: 80px;
+    height: 30px;
+    font-size: large;
+}
+
+.msgContainer textarea {
+    border-radius: 6px;
+    height: 16%;
+    width: 100%;
+}
+
+.msgContainer h1,h2,li {
+    text-align: left;
+}
+
+li::marker {
+    color: #C2EB2D;
+    font-size: 1.6em;
+}
+
+.proTournamentITF {
+    width: 100%;
+    height: 17px;
+    margin-top: 30px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+}
+
+
+
+@media only screen and (max-width: 1000px) {
+    .breadcrumb {
+        display: none;
+    }
+    .tourContainer input, select {
+        height: 30px;
+    
+    }
+
+    body {
+        background-color:#F1F2F7 ;
+        width: 100%;
+        height: 1100px;
+        justify-content: center;
+        padding: 0;
+    }
+
+    header {
+        width: 100%;
+        display: none;
+    }
+
+    nav {
+        display: none;
+    }
+
+
+    #wrapperObject {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tourContainer button {
+        font-size: small;
+    }
+
+    .tourContainer {
+        width: 100%;
+        height: 400px;
+        padding: 30px;
+        margin: 20px 0;
+    }
+
+    main {
+        padding: 0;
+    }
+
+    #wrapperObject h1,h2 {
+        margin: 10px;
+    }
+
+    #wrapperObject label, select{
+        font-size: smaller;
+        margin: 0;
+    }
+    #wrapperObject label {
+        margin-top: 18px;
+    }
+
+    .formGap input {
+        font-size: smaller;
+    }
+
+    #logo {
+        display: none;
+        flex-wrap: wrap;
+    }
+    .structure {
+        width: 100%;
+        float: left;
+        height: 260px;
+        padding: 20px;
+        margin: 20px 0;
+    }  
+
+    .structure button {
+        margin-top: 20px;
+        height: 16%;
+    }
+
+    .formBut {
+        width: 100%;
+    }
+}
