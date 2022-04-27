@@ -1,52 +1,60 @@
-var tournaments = [{
-  state: 'Registration',
-  name: 'kid Tournament',
-  number: '12',
-  date: '01/12/2022',
-  players: '16-18<br>women'
-},
-{
-  state: 'progress',
-  name: 'Winter Tournament',
-  number: '13',
-  date: '03/12/2022',
-  players: '18+<br>involved'
-},
-{
-  state: 'Registration',
-  name: 'world Championship',
-  number: '22',
-  date: '01/14/2022',
-  players: '16<br>women'
-},
-{
-  state: 'Finished',
-  name: 'Sukkot Tournament',
-  number: '12',
-  date: '08/29/2022',
-  players: '14 men'
-},
-{
-  state: 'Registration',
-  name: ' Tournament',
-  number: '12',
-  date: '04/21/2022',
-  players: '12-14<br>women'
-},
-{
-  state: 'Finished',
-  name: 'Winter Tournament',
-  number: '12',
-  date: '05/29/2022',
-  players: '14<br>men'
-},
-{
-  state: 'Registration',
-  name: 'Winter Tournament',
-  number: '12',
-  date: '06/03/2022',
-  players: '12<br>women'
-},
+var tournaments = [
+  {
+    state: "Registration",
+    name: "National Tournament",
+    number: "12",
+    date: "01/12/2022",
+    players: "16-18<br>women",
+    progrss: "70",
+  },
+  {
+    state: "progress",
+    name: "Masters",
+    number: "13",
+    date: "03/12/2022",
+    players: "18+<br>involved",
+    progrss: "15",
+  },
+  {
+    state: "Registration",
+    name: "South Championship",
+    number: "22",
+    date: "01/14/2022",
+    players: "16<br>women",
+    progrss: "62",
+  },
+  {
+    state: "Progress",
+    name: "Winter Tournament",
+    number: "12",
+    date: "08/29/2022",
+    players: "18<br>men",
+    progrss: "84",
+  },
+  {
+    state: "Registration",
+    name: "ITF3",
+    number: "12",
+    date: "04/21/2022",
+    players: "14<br>women",
+    progrss: "80",
+  },
+  {
+    state: "Finished",
+    name: "Summer Tournament",
+    number: "12",
+    date: "05/29/2022",
+    players: "14<br>men",
+    progrss: "100",
+  },
+  {
+    state: "Registration",
+    name: "Grand Slam",
+    number: "12",
+    date: "06/03/2022",
+    players: "12<br>women",
+    progrss: "40",
+  },
 ];
 
 function addButtonValou(){
@@ -135,7 +143,7 @@ function ITFOnclick() {
   document.location.href = "dashboard.html";
 }
 
-function newTourPage() {
+function newTourFunc() {
   document.location.href = "newTournament.html";
 }
 
@@ -168,13 +176,6 @@ function save() {
 
 function sortByDateasc() {
   createDate();
-  // let reg = document.getElementById("btnOpenReg");
-  // if (reg.classList.contains("selected")
-  // {
-  //   var regTour = tournaments.filter(obj => {
-  //     return obj.state=
-  //   })
-
   tournaments = tournaments.sort((dateA, dateB) => dateA.date - dateB.date);
   for (let i = 0; i < tournaments.length; i++) {
     tournaments[i].date = tournaments[i].date.toLocaleDateString('en-US');

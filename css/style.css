@@ -54,7 +54,7 @@ main {
     padding-left: 40px;
     padding-right: 40px;
     position: relative;
-
+}
 #logo {
     background-image: url(../images/logo.png);
     background-size: cover;
