@@ -57,16 +57,6 @@ var tournaments = [
   },
 ];
 
-// function mainBth() {
-//   let x = document.getElementById("mainBtnContainer")
-//   let bth = x.getElementsByClassName("btn")
-//   for (let i = 0; i < bth.length; i++) {
-//     if(bth[i].className == "btn         selected")
-//     console.log(bth[i].className);
-//       return i;
-//   }
-//   return 3;
-// }
 
 function createTour() {
   let container = document.getElementsByClassName("tournamentsContainer")[0];
@@ -116,8 +106,13 @@ function createTour() {
     iconContainer.appendChild(figure);
     tournament.appendChild(iconContainer);
     container.appendChild(tournament);
-    tournament.setAttribute("onclick", "mainObjectOnclick(this)");
-    // let c = selectStatus();
+
+    if (tournaments[i].name != "ITF3"){
+      tournament.setAttribute("onclick", "mainObjectOnclick()");
+      }
+      else if (tournaments[i].name==="ITF3")
+      {tournament.setAttribute("onclick", "ITFOnclick()");}
+
   }
   filterSelection("all");
 }
@@ -130,14 +125,16 @@ function createDate() {
   }
 }
 
-function mainObjectOnclick(crumb) {
+function ITFOnclick() {
+  document.location.href = "dashboard.html";
+}
+
+function newTourPage() {
+  document.location.href = "newTournament.html";
+}
+
+function mainObjectOnclick() {
   document.location.href = "mainObject.html";
-  // function addBread(crumb){
-  //   var firstCrumb= crumb.classList[1];
-  //   var secCrumb=crumb.getElementsByTagName("a")[0].innerHTML;
-  //   let crumbs = document.getElementsByClassName("breadcrumb")[0];
-  //   crumbs.innerHTML+=`<li hidden>${firstCrumb}</li><li hidden>${secCrumb}</li>`;
-  // }
 }
 
 function fillFields() {}
@@ -247,7 +244,7 @@ function addactive() {
 
 let currentTab = 0;
 
-//מראה את השדות הרלוונטים בטופס
+//show only relevant fields in form
 function showTab(pageNum) {
   var x = document.getElementsByClassName("tab");
   x[pageNum].style.display = "grid";
@@ -263,7 +260,7 @@ function showTab(pageNum) {
   }
   fixStepIndicator(pageNum);
 }
-// ניווט בטופס
+//navigation in form
 function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   if (n == 1 && !validateForm()) return false;
@@ -276,7 +273,7 @@ function nextPrev(n) {
   showTab(currentTab);
 }
 
-// מעתיק את התאריך ומוסיף 30 יום
+//copy date and add 30 days to it
 function setRegistration(dateV) {
   let reg = document.getElementById("regTour");
   let d = new Date(dateV);
@@ -298,7 +295,7 @@ function fixStepIndicator(n) {
   x[n].className += " active";
 }
 
-//אפשר להכניס "שם יוצר הטופס" רק אותיות
+//allow only letters
 $(function () {
   $("#nameOfman").keydown(function (e) {
     if (e.shiftKey || e.ctrlKey || e.altKey) {
@@ -376,25 +373,6 @@ $(function () {
     return new Date().toJSON().split("T")[0];
   });
 });
-
-// function responsiveNav() {
-// const hamburger = document.querySelector(".hamburger");
-// const navMenu = document.querySelector(".nav-menu");
-// const navLink = document.querySelectorAll(".nav-link");
-// hamburger.addEventListener("click", mobileMenu(hamburger,navMenu));
-// navLink.forEach(n => n.addEventListener("click", closeMenu(hamburger,navMenu)));
-// }
-
-// function mobileMenu(hamburger,navMenu) {
-//     hamburger.classList.toggle('active');
-//     navMenu.classList.toggle("active");
-// }
-
-
-// function closeMenu(hamburger,navMenu) {
-//     hamburger.classList.remove("active");
-//     navMenu.classList.remove("active");
-// }
 
 function viewMobile() {
   var x = document.getElementsByClassName("navbar")[0];
