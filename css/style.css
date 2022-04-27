@@ -54,7 +54,6 @@ main {
     padding-left: 40px;
     padding-right: 40px;
     position: relative;
-}
 
 #logo {
     background-image: url(../images/logo.png);
@@ -119,7 +118,6 @@ main {
     width: 140px;
     height: 30px;
     border-radius: 6px;
-    margin-right: 20px;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -464,9 +462,10 @@ div.formError {
     font-size: 12px;
     color: red;
     display: none;
-    padding: 0,0,0,0;
+    padding: 0, 0, 0, 0;
 }
-label > span{
+
+label>span {
     color: red;
 }
 
@@ -476,10 +475,11 @@ label > span{
     top: 30px;
     opacity: 0;
 }
+
 input.invalid {
     background-color: #ffdddd;
-  }
-  
+}
+
 
 select {
     border-radius: 5px;
@@ -510,6 +510,7 @@ select {
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
     left: 0;
+
 }
 
 #nextBtn {
@@ -682,6 +683,7 @@ input[type='radio'] {
     color: #C2EB2D;
 }
 
+
 button {
     background-color: transparent;
     border-width: 0;
@@ -803,6 +805,10 @@ button {
     background-color: #e5e5ea;
 }
 
+.tourContainer h2 {
+    text-align: center;
+}
+
 #readOnlyForm label{
     margin-top: 24px;
     margin-bottom: 0;
@@ -886,9 +892,9 @@ a {
     text-align: right
 }
 
-.itfButtons {
+#itfButtons {
     display: flex;
-    justify-content: space-around
+    justify-content: space-around;
 }
 
 .msgContainer button {
@@ -925,94 +931,23 @@ li::marker {
 
 
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 900px) {
     .breadcrumb {
         display: none;
     }
-    .tourContainer input, select {
-        height: 30px;
-    
-    }
 
     body {
-        background-color:#F1F2F7 ;
-        width: 100%;
-        height: 1100px;
-        justify-content: center;
+        width: 550px;
+        flex-wrap: wrap;
         padding: 0;
-    }
-
-    header {
-        width: 100%;
-        display: none;
+        margin: 0;
+        justify-content: space-between;
+        align-content: flex-start;
     }
 
     nav {
         display: none;
     }
-
-
-
-    #wrapperObject {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .tourContainer button {
-        font-size: small;
-    }
-
-    .tourContainer {
-        width: 100%;
-        height: 400px;
-        padding: 30px;
-        margin: 20px 0;
-    }
-
-    main {
-        padding: 0;
-    }
-
-    #wrapperObject h1,h2 {
-        margin: 10px;
-    }
-
-    #wrapperObject label, select{
-        font-size: smaller;
-        margin: 0;
-    }
-    #wrapperObject label {
-        margin-top: 18px;
-    }
-
-    .formGap input {
-        font-size: smaller;
-    }
-
-    #logo {
-        display: none;
-        flex-wrap: wrap;
-    }
-    .structure {
-        width: 100%;
-        float: left;
-        height: 260px;
-        padding: 20px;
-        margin: 20px 0;
-    }  
-
-    .structure button {
-        margin-top: 20px;
-        height: 16%;
-    }
-
-    .formBut {
-        width: 100%;
-    }
-
 
     .menu {
         display: none;
@@ -1021,7 +956,7 @@ li::marker {
     header {
         width: 100%;
         border-radius: 0;
-        height: 60px;
+        height: 60spx;
         margin: 0;
     }
 
@@ -1079,6 +1014,22 @@ li::marker {
         width: 100%;
         border-radius: 0;
         height: 80px;
+    }
+
+    #wrapperObject {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .tourContainer {
+        width: 100%;
+    }
+
+    main {
+        padding: 0;
     }
 
 }

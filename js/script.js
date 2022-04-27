@@ -1,72 +1,66 @@
-var tournaments = [
-  {
-    state: "Registration",
-    name: "National Tournament",
-    number: "12",
-    date: "01/12/2022",
-    players: "16-18<br>women",
-    progrss: "70",
-  },
-  {
-    state: "progress",
-    name: "Masters",
-    number: "13",
-    date: "03/12/2022",
-    players: "18+<br>involved",
-    progrss: "15",
-  },
-  {
-    state: "Registration",
-    name: "South Championship",
-    number: "22",
-    date: "01/14/2022",
-    players: "16<br>women",
-    progrss: "62",
-  },
-  {
-    state: "Progress",
-    name: "Winter Tournament",
-    number: "12",
-    date: "08/29/2022",
-    players: "18<br>men",
-    progrss: "84",
-  },
-  {
-    state: "Registration",
-    name: "ITF3",
-    number: "12",
-    date: "04/21/2022",
-    players: "14<br>women",
-    progrss: "80",
-  },
-  {
-    state: "Finished",
-    name: "Summer Tournament",
-    number: "12",
-    date: "05/29/2022",
-    players: "14<br>men",
-    progrss: "100",
-  },
-  {
-    state: "Registration",
-    name: "Grand Slam",
-    number: "12",
-    date: "06/03/2022",
-    players: "12<br>women",
-    progrss: "40",
-  },
+var tournaments = [{
+  state: 'Registration',
+  name: 'kid Tournament',
+  number: '12',
+  date: '01/12/2022',
+  players: '16-18<br>women'
+},
+{
+  state: 'progress',
+  name: 'Winter Tournament',
+  number: '13',
+  date: '03/12/2022',
+  players: '18+<br>involved'
+},
+{
+  state: 'Registration',
+  name: 'world Championship',
+  number: '22',
+  date: '01/14/2022',
+  players: '16<br>women'
+},
+{
+  state: 'Finished',
+  name: 'Sukkot Tournament',
+  number: '12',
+  date: '08/29/2022',
+  players: '14 men'
+},
+{
+  state: 'Registration',
+  name: ' Tournament',
+  number: '12',
+  date: '04/21/2022',
+  players: '12-14<br>women'
+},
+{
+  state: 'Finished',
+  name: 'Winter Tournament',
+  number: '12',
+  date: '05/29/2022',
+  players: '14<br>men'
+},
+{
+  state: 'Registration',
+  name: 'Winter Tournament',
+  number: '12',
+  date: '06/03/2022',
+  players: '12<br>women'
+},
 ];
 
-// function mainBth() {
-//   let x = document.getElementById("mainBtnContainer")
-//   let bth = x.getElementsByClassName("btn")
-//   for (let i = 0; i < bth.length; i++) {
-//     if(bth[i].className == "btn         selected")
-//     console.log(bth[i].className);
-//       return i;
-//   }
-//   return 3;
-// }
+function addButtonValou(){
+  let btnOpenReg = 0,progress = 0, Finished = 0;
+  for(let i =0; i < tournaments.length;i++){
+    if(tournaments[i].state =='Registration') btnOpenReg ++;
+    if(tournaments[i].state =='progress') progress ++;
+    if(tournaments[i].state =='Finished') Finished ++;
+  }
+  console.log(progress)
+  document.getElementById("btnOpenReg").innerHTML = btnOpenReg
+  document.getElementById("btnInProgress").innerHTML = progress
+  document.getElementById("Finished").innerHTML = Finished
+}
 
 function createTour() {
   let container = document.getElementsByClassName("tournamentsContainer")[0];
@@ -116,10 +110,17 @@ function createTour() {
     iconContainer.appendChild(figure);
     tournament.appendChild(iconContainer);
     container.appendChild(tournament);
-    tournament.setAttribute("onclick", "mainObjectOnclick(this)");
+    if (tournaments[i].name != "ITF3"){
+      tournament.setAttribute("onclick", "mainObjectOnclick()");
+      }
+      else if (tournaments[i].name==="ITF3")
+      {tournament.setAttribute("onclick", "ITFOnclick()");}
+
   }
-  filterSelection("all");
-}
+    filterSelection("all");
+    addButtonValou();
+  }
+
 
 function createDate() {
   let container = document.getElementsByClassName("tournamentsContainer")[0];
@@ -129,14 +130,17 @@ function createDate() {
   }
 }
 
-function mainObjectOnclick(crumb) {
+
+function ITFOnclick() {
+  document.location.href = "dashboard.html";
+}
+
+function newTourPage() {
+  document.location.href = "newTournament.html";
+}
+
+function mainObjectOnclick() {
   document.location.href = "mainObject.html";
-  // function addBread(crumb){
-  //   var firstCrumb= crumb.classList[1];
-  //   var secCrumb=crumb.getElementsByTagName("a")[0].innerHTML;
-  //   let crumbs = document.getElementsByClassName("breadcrumb")[0];
-  //   crumbs.innerHTML+=`<li hidden>${firstCrumb}</li><li hidden>${secCrumb}</li>`;
-  // }
 }
 
 function fillFields() {}
@@ -161,11 +165,19 @@ function save() {
   }
 }
 
+
 function sortByDateasc() {
   createDate();
+  // let reg = document.getElementById("btnOpenReg");
+  // if (reg.classList.contains("selected")
+  // {
+  //   var regTour = tournaments.filter(obj => {
+  //     return obj.state=
+  //   })
+
   tournaments = tournaments.sort((dateA, dateB) => dateA.date - dateB.date);
   for (let i = 0; i < tournaments.length; i++) {
-    tournaments[i].date = tournaments[i].date.toLocaleDateString("en-US");
+    tournaments[i].date = tournaments[i].date.toLocaleDateString('en-US');
   }
   createTour();
 }
@@ -174,7 +186,7 @@ function sortByDatedesc() {
   createDate();
   tournaments = tournaments.sort((dateA, dateB) => dateB.date - dateA.date);
   for (let i = 0; i < tournaments.length; i++) {
-    tournaments[i].date = tournaments[i].date.toLocaleDateString("en-US");
+    tournaments[i].date = tournaments[i].date.toLocaleDateString('en-US');
   }
   createTour();
 }
@@ -197,7 +209,6 @@ function filterFunction() {
 
 function filterSelection(c) {
   var x, i;
-  statusT = c;
   x = document.getElementsByClassName("tournaments");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
@@ -246,7 +257,7 @@ function addactive() {
 
 let currentTab = 0;
 
-//מראה את השדות הרלוונטים בטופס
+//show only relevant fields in form
 function showTab(pageNum) {
   var x = document.getElementsByClassName("tab");
   x[pageNum].style.display = "grid";
@@ -255,14 +266,14 @@ function showTab(pageNum) {
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (pageNum == x.length - 1) {
+  if (pageNum == (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
-  fixStepIndicator(pageNum);
+  fixStepIndicator(pageNum)
 }
-// ניווט בטופס
+//navigation in form
 function nextPrev(n) {
   var x = document.getElementsByClassName("tab");
   if (n == 1 && !validateForm()) return false;
@@ -271,16 +282,18 @@ function nextPrev(n) {
   if (currentTab >= x.length) {
     window.location.href = "index.html";
     // document.getElementById("regForm").submit();
+
   }
   showTab(currentTab);
 }
 
-// מעתיק את התאריך ומוסיף 30 יום
+
+//copy date and add 30 days to it
 function setRegistration(dateV) {
   let reg = document.getElementById("regTour");
   let d = new Date(dateV);
   let c = new Date(d.setDate(d.getDate(dateV) - 30));
-  reg.value = c.toLocaleDateString("en-GB");
+  reg.value = c.toLocaleDateString('en-GB');
   document.getElementById("imgReg").style.display = "block";
 }
 
@@ -289,30 +302,22 @@ function editDateReg() {
 }
 
 function fixStepIndicator(n) {
-  var i,
-    x = document.getElementsByClassName("stepper-item");
+  var i, x = document.getElementsByClassName("stepper-item");
   for (i = 0; i < x.length; i++) {
     x[i].className = x[i].className.replace(" active", "");
   }
   x[n].className += " active";
 }
 
-//אפשר להכניס "שם יוצר הטופס" רק אותיות
+
+//allow only letters
 $(function () {
-  $("#nameOfman").keydown(function (e) {
+  $('#nameOfman').keydown(function (e) {
     if (e.shiftKey || e.ctrlKey || e.altKey) {
       e.preventDefault();
     } else {
       var key = e.keyCode;
-      if (
-        !(
-          key == 8 ||
-          key == 32 ||
-          key == 46 ||
-          (key >= 35 && key <= 40) ||
-          (key >= 65 && key <= 90)
-        )
-      ) {
+      if (!((key == 8) || (key == 32) || (key == 46) || (key >= 35 && key <= 40) || (key >= 65 && key <= 90))) {
         e.preventDefault();
       }
     }
@@ -328,11 +333,9 @@ function CustomNotification(choise) {
   }
 }
 
+
 function validateForm() {
-  let Requireds,
-    i,
-    errorMsg,
-    valid = true;
+  let Requireds, i, errorMsg, valid = true;
   tabShow = document.getElementsByClassName("tab")[currentTab];
   Requireds = tabShow.getElementsByClassName("Required");
   for (i = 0; i < Requireds.length; i++) {
@@ -376,11 +379,4 @@ $(function () {
   });
 });
 
-function viewMobile() {
-  var x = document.getElementsByClassName("navbar")[0];
-  if (x.style.display === "block") {
-    x.style.display = "none";
-  } else {
-    x.style.display = "block";
-  }
-}
+
