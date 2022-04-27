@@ -1,67 +1,69 @@
 var tournaments = [{
-    state: 'Registration',
-    name: 'kid Tournament',
-    number: '12',
-    date: '01/12/2022',
-    players: '16-18<br>women'
-  },
-  {
-    state: 'progress',
-    name: 'Winter Tournament',
-    number: '13',
-    date: '03/12/2022',
-    players: '18+<br>involved'
-  },
-  {
-    state: 'Registration',
-    name: 'Winter Tournament',
-    number: '22',
-    date: '01/14/2022',
-    players: '16<br>women'
-  },
-  {
-    state: 'Finished',
-    name: 'Winter Tournament',
-    number: '12',
-    date: '08/29/2022',
-    players: '14 men'
-  },
-  {
-    state: 'Registration',
-    name: 'Winter Tournament',
-    number: '12',
-    date: '04/21/2022',
-    players: '12-14<br>women'
-  },
-  {
-    state: 'Finished',
-    name: 'Winter Tournament',
-    number: '12',
-    date: '05/29/2022',
-    players: '14<br>men'
-  },
-  {
-    state: 'Registration',
-    name: 'Winter Tournament',
-    number: '12',
-    date: '06/03/2022',
-    players: '12<br>women'
-  },
+  state: 'Registration',
+  name: 'kid Tournament',
+  number: '12',
+  date: '01/12/2022',
+  players: '16-18<br>women'
+},
+{
+  state: 'progress',
+  name: 'Winter Tournament',
+  number: '13',
+  date: '03/12/2022',
+  players: '18+<br>involved'
+},
+{
+  state: 'Registration',
+  name: 'world Championship',
+  number: '22',
+  date: '01/14/2022',
+  players: '16<br>women'
+},
+{
+  state: 'Finished',
+  name: 'Sukkot Tournament',
+  number: '12',
+  date: '08/29/2022',
+  players: '14 men'
+},
+{
+  state: 'Registration',
+  name: ' Tournament',
+  number: '12',
+  date: '04/21/2022',
+  players: '12-14<br>women'
+},
+{
+  state: 'Finished',
+  name: 'Winter Tournament',
+  number: '12',
+  date: '05/29/2022',
+  players: '14<br>men'
+},
+{
+  state: 'Registration',
+  name: 'Winter Tournament',
+  number: '12',
+  date: '06/03/2022',
+  players: '12<br>women'
+},
 ];
 
-// function mainBth() {
-//   let x = document.getElementById("mainBtnContainer")
-//   let bth = x.getElementsByClassName("btn")
-//   for (let i = 0; i < bth.length; i++) {
-//     if(bth[i].className == "btn         selected")
-//     console.log(bth[i].className);
-//       return i;
-//   }
-//   return 3;
-// }
-
+function addButtonValou(){
+  let btnOpenReg = 0,progress = 0, Finished = 0;
+  for(let i =0; i < tournaments.length;i++){
+    if(tournaments[i].state =='Registration') btnOpenReg ++;
+    if(tournaments[i].state =='progress') progress ++;
+    if(tournaments[i].state =='Finished') Finished ++;
+  }
+  console.log(progress)
+  document.getElementById("btnOpenReg").innerHTML = btnOpenReg
+  document.getElementById("btnInProgress").innerHTML = progress
+  document.getElementById("Finished").innerHTML = Finished
+}
 
 function createTour() {
+  addButtonValou();
   let container = document.getElementsByClassName("tournamentsContainer")[0];
   for (let i = 0; i < tournaments.length; i++) {
     let tournament = document.createElement("button");
@@ -109,9 +111,8 @@ function createTour() {
     iconContainer.appendChild(figure);
     tournament.appendChild(iconContainer);
     container.appendChild(tournament);
-    let c = selectStatus();
-  
     filterSelection("all");
+    addButtonValou();
   }
 }
 
@@ -166,7 +167,6 @@ function filterFunction() {
 
 function filterSelection(c) {
   var x, i;
-  statusT = c;
   x = document.getElementsByClassName("tournaments");
   if (c == "all") c = "";
   for (i = 0; i < x.length; i++) {
@@ -336,3 +336,4 @@ $(function () {
     return new Date().toJSON().split('T')[0];
   });
 });
+

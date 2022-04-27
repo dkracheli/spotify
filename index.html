@@ -37,7 +37,7 @@
         </nav>
     </header>
     <main>
-        <section id="SearchWrapper">
+        <!-- <section id="SearchWrapper">
             <input type="text" id="mySearch" onkeyup="myFunction()" placeholder="Search a tournament, category etc..."
                 title="Type in a category">
             <i class="fa fa-search"></i>
@@ -52,9 +52,9 @@
                 </ul>
             </div>
             </section>
-        </section>
+        </section> -->
         <div id="filter">Filter</div>
-        <section>
+        <section class="menu">
             <div class="btn-group">
                 <a class="btn dropdown-toggle" data-toggle="dropdown">Time Range</a>
                 <ul class="dropdown-menu">
@@ -111,12 +111,12 @@
         <section>
             <div id="mainBtnContainer">
                 <button class="btn" onclick="filterSelection('Registration')">Open for Registration
-                    <div id="btnOpenReg">5</div></button>
+                    <div id="btnOpenReg"></div></button>
                 <button class="btn" onclick="filterSelection('progress')">
-                    In progress <div id="btnInProgress">4</div>
+                    In progress <div id="btnInProgress"></div>
                 </button>
                 <button class="btn" onclick="filterSelection('Finished')">
-                    Finished <div id="btnOpenReg">10</div>
+                    Finished <div id="Finished"></div>
                 </button>
             </div>
         </section>
@@ -143,9 +143,12 @@
         </script> 
         </section>
     </main>
+    <footer>
+        
+    </footer>
     <script>
         filterSelection('all');
-  
+        
     </script>
 </body>
 
